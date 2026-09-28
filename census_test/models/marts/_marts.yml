@@ -48,3 +48,14 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: customer_category_summary
+    description: >
+      One row per customer/category with order counts and totals. Added after the project's
+      first refresh -- useful for exercising the "brand new model" path in Census's refresh
+      (a name that has never had a Model row before), as opposed to updating an existing one.
+    columns:
+      - name: customer_id
+        description: "Foreign key to customers."
+      - name: category
+        description: "Product category this row summarizes."
