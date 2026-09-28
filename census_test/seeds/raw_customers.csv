@@ -1,0 +1,9 @@
+id,first_name,last_name,email,phone,created_at
+1,Jenny,Anderson,jenny.anderson@example.com,555-0101,2024-01-05
+2,Marco,Diaz,marco.diaz@example.com,555-0102,2024-01-12
+3,Priya,Shah,priya.shah@example.com,555-0103,2024-02-01
+4,Wei,Chen,wei.chen@example.com,555-0104,2024-02-14
+5,Aaliyah,Brooks,aaliyah.brooks@example.com,555-0105,2024-03-02
+6,Tomas,Novak,tomas.novak@example.com,555-0106,2024-03-19
+7,Fatima,Haddad,fatima.haddad@example.com,555-0107,2024-04-07
+8,Liam,OConnor,liam.oconnor@example.com,555-0108,2024-04-22

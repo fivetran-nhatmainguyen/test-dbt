@@ -1,0 +1,19 @@
+# Local-only template. Copy this to a location OUTSIDE this repo (e.g. ~/.dbt/profiles.yml)
+# and fill in your Postgres credentials so you can run `dbt seed` / `dbt build` locally.
+#
+# Census does NOT use this file. When Census compiles this project, it generates its own
+# profiles.yml on the fly (profile name `dbt_connection_<id>`, target `default`) from the
+# source connection you configure in the Census UI. See README.md for details.
+
+default:
+  target: default
+  outputs:
+    default:
+      type: postgres
+      host: localhost
+      user: your_user
+      pass: your_password
+      port: 5432
+      dbname: your_database
+      schema: census_test
+      threads: 4

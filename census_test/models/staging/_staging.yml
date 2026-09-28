@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "One row per customer, cleaned from the raw customers seed."
+    columns:
+      - name: customer_id
+        description: "Primary key for a customer."
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Customer email address."
+        meta:
+          contains_pii: true
+      - name: phone
+        description: "Customer phone number."
+        meta:
+          contains_pii: true
+
+  - name: stg_orders
+    description: "One row per order, cleaned from the raw orders seed."
+    columns:
+      - name: order_id
+        description: "Primary key for an order."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Foreign key to stg_customers."
+        tests:
+          - not_null
+
+  - name: stg_products
+    description: "One row per product, cleaned from the raw products seed."
+    columns:
+      - name: product_id
+        description: "Primary key for a product."
+        tests:
+          - unique
+          - not_null

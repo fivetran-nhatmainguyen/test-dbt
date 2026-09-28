@@ -1,0 +1,30 @@
+name: 'census_test'
+version: '1.0.0'
+config-version: 2
+
+# Census reads this to pick the highest matching dbt version out of the ones it supports
+# (currently 1.7.16, 1.8.9, 1.9.0, 1.10.13). See giza app/lib/dbt/context.rb#get_dbt_package.
+require-dbt-version: ">=1.7.0,<1.11.0"
+
+# This profile name is only used for local `dbt` runs. Census ignores it and always
+# generates its own profile (`dbt_connection_<id>`) at compile time.
+profile: 'default'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  census_test:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: ephemeral
+    marts:
+      +materialized: table
+      +tags: ['census']
