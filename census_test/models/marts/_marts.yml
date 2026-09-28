@@ -59,3 +59,14 @@ models:
         description: "Foreign key to customers."
       - name: category
         description: "Product category this row summarizes."
+
+  - name: regional_sales_summary
+    description: >
+      One row per category with order counts, totals, and distinct customers. A distinctly new
+      fqn never seen at any prior commit -- guarantees Census's next refresh treats it as a
+      brand-new model rather than an update to an existing row.
+    columns:
+      - name: category
+        description: "Product category this row summarizes."
+      - name: order_count
+        description: "Number of orders in this category."
