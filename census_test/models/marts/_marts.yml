@@ -70,3 +70,14 @@ models:
         description: "Product category this row summarizes."
       - name: order_count
         description: "Number of orders in this category."
+
+  - name: product_performance_summary
+    description: >
+      One row per product/category with order counts, units sold, and revenue. Another
+      distinctly new fqn never seen at any prior commit, for the same "brand new model"
+      refresh-testing purpose as customer_category_summary and regional_sales_summary.
+    columns:
+      - name: product_name
+        description: "Name of the product this row summarizes."
+      - name: total_revenue
+        description: "Sum of order totals for this product/category."
